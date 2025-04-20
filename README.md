@@ -1,6 +1,6 @@
 # Restaurants MCP Server
 
-A Model Context Protocol (MCP) server that allows LLMs to search for hotels and destinations using the Booking.com API.
+A Model Context Protocol (MCP) server that allows LLMs to search for restaurants and locations using the Tripadvisor.com API.
 
 ## Features
 
@@ -23,7 +23,7 @@ The current implementation uses two endpoints:
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.13.3
 - MCP SDK (`pip install mcp`)
 - httpx (`pip install httpx`)
 - python-dotenv (`pip install python-dotenv`)
@@ -32,8 +32,8 @@ The current implementation uses two endpoints:
 
 1. Clone this repository:
    ```
-   git clone https://github.com/username/hotels_mcp_server.git
-   cd hotels_mcp_server
+   git clone https://github.com/fbkaba/mcp-gemini-restaurant-agent.git
+   cd mcp-gemini-restaurant-agent
    ```
 
 2. Install dependencies:
@@ -55,11 +55,7 @@ python main.py
 
 The server uses stdio transport by default for compatibility with MCP clients like Cursor.
 
-## Using with MCP Clients
-
-
-
-### Gemini Model
+### Gemini MCP Client  
 
 Test your server with Gemini Model gemini-2.5-flash-preview-04-17:
 
@@ -81,7 +77,7 @@ This will send a prompt to finds restaurants for a given city using the mcp tool
      "restaurants": {
        "command": "python",
        "args": [
-         "/path/to/mcp_tool_server_restaurantr/main.py"
+         "/path/to/mcp_tool_server_restaurant/main.py"
        ]
      }
    }
